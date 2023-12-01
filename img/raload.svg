@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 57" width="57" height="57">
+	<title>discord-search-svg</title>
+	<defs>
+		<image  width="49" height="51" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAzAQMAAAAEmnJUAAAAAXNSR0IB2cksfwAAAAZQTFRFAAAAgICAkmm5JAAAAAJ0Uk5TAP9bkSK1AAAAmklEQVR4nKXQsQ3DIBAF0E9cUDICo7BKRsgAkcxo9iZ0aZHSuLD8wz+fqyhVaJ7gTsA/TDjXVGeaK7nIF9klyd09XFbZoxqnsWE7LV0uyGZD3KwPcZcbwuXhjw4fcgaerpVK/VJ/QP7fX/fPVsdpsiPgNlyQlC9fjjgydYuobMEcF11zkEHzGULzksXNbiTfMpBrs/BE87nc8QHgR3unPYMagAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Refresh_icon" href="#img1" x="4" y="3"/>
+</svg>

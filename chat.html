@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Plaze Chat</title>
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="AjaxPush.js"></script>
+	<link href="style.css" rel="stylesheet">
+	    <!-- Bootstrap core CSS -->
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+  
+		<!-- Additional CSS Files -->
+		<link rel="stylesheet" href="assets/css/fontawesome.css">
+		<link rel="stylesheet" href="assets/css/templatemo-liberty-market.css">
+		<link rel="stylesheet" href="assets/css/owl.css">
+		<link rel="stylesheet" href="assets/css/animate.css">
+		<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+		<!-- fevicon -->
+		<link rel="icon" href="img/pl.jpg" type="image/gif" />
+		<!-- Scrollbar Custom CSS -->
+		<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+		<!-- Tweaks for older IEs-->
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+		  media="screen">
+		<link rel="icon" sizes="192x192" href="img/pl.jpg">
+		<link rel="shortcut icon" href="img/pl.jpg" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="img/pl.jpg" type="image/x-icon" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-touch-fullscreen" content="yes">
+</head>
+<header>
+    <img src="./img/pl.png" alt="Profile Picture">
+
+</header>
+
+<h2>
+    <div class="page">
+        <div class="profile-top-container">
+            
+
+                    </div>
+                </div>
+            </div>
+            <div class="profile-tweets-tabs">
+                <a href="index.html" id="tb1" class="tab-button active">Plaze</a>
+                <a href="index.html" id="tb1" class="tab-button active">Nouveau</a>
+                <a href="chat.html" id="tb1" class="tab-button active">Chat</a>
+            </div>
+        </div>
+
+</h2>
+
+<body>
+	
+	<script type="text/javascript">
+		var comet = new AjaxPush('listener.php', 'sender.php');
+		var n = new Function("return (Math.random()*190).toFixed(0)");
+
+		// create anonymous users
+		var c = "rgb(" + n() + ", " + n() + "," + n() + ")";
+		var template = "<strong style='color: " + c + "'>" + 'Plaze_' + n() + "</strong>: ";
+
+		// listener
+		comet.connect(function(data) { $("#history").append(data.message) + "<br>"; });
+
+		// sender
+		var send = function() {
+			comet.doRequest({ message: template + $("#message").val() + "<br>" }, function(){
+				$("#message").val('').focus();
+			})
+		}
+	</script>
+	<div class="tweet">
+		<div class="tweet-profile-pic">
+			<img src="./img/pl.jpg" alt="Profile Picture">
+		</div>
+		<div class="tweet-content">
+			<div class="tweeter-info">
+				<span class="name">Plaze</span>
+				<img src="img/icons8-instagram-verified.svg" alt="">
+				<span class="hashtag"></span>
+			</div>
+			<div class="tweet-text">
+				<p>bienvenue dans la partie chat de Plaze !</p>
+			</div>
+			<div class="tweet-react">
+				</a>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<input type="text" autofocus id="message" placeholder="Salon blabla !">
+	<button onclick="send()">Envoyer</button><br><br>
+	<div id="history"></div>
+
+</div>
+</body>
+</html>
